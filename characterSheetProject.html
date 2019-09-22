@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+
+  <title>Magical Fury Character Sheet</title>
+  <meta name="description" content="magicalgirlsheet">
+  <meta name="author" content="SitePoint">
+
+
+</head>
+
+<body>
+      Magical Fury Character Sheet<br><br> 
+      <form>
+        <h4 class="title is-4">Mundane Side</h4>
+        <fieldset class="box">
+          
+          <legend class="label has-text-left"><font size="5">Mundane Side</font></legend>
+            What is your name?<br>
+              <textarea id="mundaneName" class="mundaneSide" cols="10" rows="1" maxLength=20></textarea>
+              <textarea id="mundaneLastName" class="mundaneSide" cols="10" rows="1" maxLength=20></textarea>
+              <button id="mundaneNameRoll" type="button">Roll</button><br>
+            What does being a girl mean to you?<br>
+              <textarea id="meaning" class="mundaneSide" maxLength=50></textarea>
+              <button id="meaningRoll" type="button">Roll</button><br>
+            What are you afraid of?<br>
+              <textarea id="afraid" class="mundaneSide" maxLength=200></textarea>
+              <button id="afraidRoll" type="button">Roll</button><br>
+            What is your wish?<br>
+              <textarea id="wish" class="mundaneSide" maxLength=200></textarea>
+              <button id="wishRoll" type="button">Roll</button><br>
+            <button id="mundaneReset" type="button">Reset</button><br>
+        </fieldset>
+        </form><br><br>
+
+      <form>
+        <fieldset>
+          <legend>Magical Side</legend>
+            Changes<br>
+              <textarea id="changes" class="magicalSide" maxLength=50></textarea>
+              <button id="changesRoll" type="button">Roll</button><br>
+            Magical Girl Color<br>
+              <textarea id="color" class="magicalSide" cols="20" rows="1" maxLength=50></textarea>
+              <button id="colorRoll" type="button">Roll</button><br>
+            Magical Theme<br>
+              <textarea id="theme" class="magicalSide" cols="20" rows="1" maxLength=50></textarea>
+              <button id="themeRoll" type="button">Roll</button><br>
+            Magical Name<br>
+              <textarea id="magicalName" class="magicalSide" cols="10" rows="1" maxLength=50></textarea>
+              <textarea id="magicalSecondName" class="magicalSide" cols="10" rows="1" maxLength=50></textarea>
+              <textarea id="magicalThirdName" class="magicalSide" cols="10" rows="1" maxLength=50></textarea>
+              <button id="magicalNameRoll" type="button">Roll</button><br>
+            <button id="magicalReset" type="button">Reset</button><br>
+        </fieldset>
+      </form><br><br>
+
+      Hope 
+        <input type="checkbox" id="hopeMark1" class="hopeMarks">
+        <input type="checkbox" id="hopeMark2" class="hopeMarks">
+        <input type="checkbox" id="hopeMark3" class="hopeMarks"><br>
+      Magic
+        <input type="checkbox" id="magicMark1" class="magicMarks">
+        <input type="checkbox" id="magicMark2" class="magicMarks">
+        <input type="checkbox" id="magicMark3" class="magicMarks"><br>
+      Trauma
+        <input type="checkbox" id="traumaMark1" class="traumaMarks">
+        <input type="checkbox" id="traumaMark2" class="traumaMarks">
+        <input type="checkbox" id="traumaMark3" class="traumaMarks"><br><br>
+
+      Hope Shift<br>
+        <input type="checkbox" id="hopeShift1" class="hopeShifts">You have a moment of sincere hope. Points of Magic and Trauma will be cleared.<br>
+        <input type="checkbox" id="hopeShift2" class="hopeShifts">A lucky break gets you closer to your goal.<br>
+        <input type="checkbox" id="hopeShift3" class="hopeShifts">You are able to heal someone else, removing points of Magic or Trauma, healing a serious injury, or removing a single effect caused by a Shift.<br>
+        <input type="checkbox" id="hopeShift4" class="hopeShifts">You find a new friend.<br><br>
+
+      <fieldset id="greatHope" hidden>
+        Great Hope<br>
+        <input type="checkbox" id="greatHope1" class="greatHope">You cause a small miracle to happen. All Hope Shift boxes will be cleared.<br>
+        <input type="checkbox" id="greatHope2" class="greatHope">Undo any alterations to your character caused by other Shifts. All Hope Shift boxes will be cleared.<br>
+        <input type="checkbox" id="greatHope3" class="greatHope">Something about your magic causes the entire world to become just a little bit happier of a place. All Hope Shift boxes will be cleared.<br>
+        <input type="checkbox" id="greatHope4" class="greatHope">Your magical girl stops being a magical girl, whether by ascending to become something else, or simply retiring to be a normal girl. <strong>Only choose this option if you no longer wish to play her</strong>
+      </fieldset>
+
+      Magic Shift<br>
+        <input type="checkbox" id="magicShift1" class="magicShifts">The environment around you is temporarily altered in an unnatural way.
+          <!-- <textarea id="environmentShift"></textarea>
+          <button id="environmentRoll" type="button">Roll</button> --><br>
+        <input type="checkbox" id="magicShift2" class="magicShifts">There is a burst of magic based on your magic's theme at an inopportune time.<br>
+        <input type="checkbox" id="magicShift3" class="magicShifts">Your magical girl form permanently takes on an unnatural aspect; write it down.
+          <!-- <textarea id="unnaturalAspect"></textarea>
+          <button id="unnaturalRoll" type="button">Roll</button> --><br>
+        <input type="checkbox" id="magicShift4" class="magicShifts">Your normal form is temporarily takes on an unnatural aspect.
+          <!-- <textarea id="unnaturalAspect2"></textarea>
+          <button id="unnaturalRoll2" type="button">Roll</button> --><br><br>
+
+      Trauma Shift<br>
+        <input type="checkbox" id="traumaShift1" class="traumaShifts">One of your past life selves takes control for for a time and does something strange.
+          <!-- <textarea id="pastLifeAction"></textarea>
+          <button id="pastLifeRoll" type="button">Roll</button> --><br>
+        <input type="checkbox" id="traumaShift2" class="traumaShifts">You have an outburst that alienates you from the others.<br>
+        <input type="checkbox" id="traumaShift3" class="traumaShifts">You hurt yourself.<br>
+        <input type="checkbox" id="traumaShift4" class="traumaShifts">You permanently acquire another fear or a twisted wish; write it down.
+          <!-- <textarea id="traumaFear"></textarea>
+          <button id="traumaFearRoll" type="button">Roll</button> --><br><br>
+
+        <fieldset id="extremeShift" hidden>
+          Extreme Shift<br>
+           <input type="checkbox" id="extremeShift1" class="extremeShift">You have a burst of raw power, destroying non-magical things in the immediate area. All Magic and Trauma Shift boxes will be cleared.<br>
+           <input type="checkbox" id="extremeShift2" class="extremeShift">Your normal form permanently takes on an unnatural aspect; write it down. All Magic and Trauma Shift boxes will be cleared.<br>
+           <input type="checkbox" id="extremeShift3" class="extremeShift">One of your past lives asserts itself enough to significantly alter your personality; write down the change. All Magic and Trauma Shift boxes will be cleared.<br>
+           <input type="checkbox" id="extremeShift4" class="extremeShift">Your magical girl permanently becomes a youma/monster; give your sheet to the GM to use as a future threat. <strong>Only choose this option if you no longer wish to play her</strong>
+        </fieldset><br>
+      
+      Notes<br>
+        <textarea id="notes" cols="100" rows="20" maxLength=-1></textarea><br><br>
+
+      <span class="button is-danger" type="button" id="resetAll">Reset All</span>
+      <button id="manualSave" type="button">Save</button>
+</body>
+
+<script src="MagicalFuryTextTables.js"></script>
+<script>
+// Creates An Array Of All Elements/Inputs With The Tag "textarea"/"input"
+  let allTextAreas = document.getElementsByTagName("textarea");
+  let allInputs = document.getElementsByTagName("input");
+
+// Reset All Button + Confirmation Message
+document.getElementById("resetAll").addEventListener("click", event => {
+  if (confirm("Are you sure you want to reset everything?")) {
+    for (i = 0; i < allTextAreas.length; i++) {
+    allTextAreas[i].value = "";
+    }
+    for (i = 0; i < allInputs.length; i++) {
+    allInputs[i].checked = false;
+    }
+  } 
+})
+
+// Load Information
+  for (i = 0; i < allTextAreas.length; i++) {
+    let retrieve = localStorage.getItem(allTextAreas[i].id);
+    allTextAreas[i].value = retrieve;
+  }
+  for (i = 0; i < allInputs.length; i++) {
+    let retrieve = JSON.parse(localStorage.getItem(allInputs[i].id));
+    allInputs[i].checked = retrieve;
+  }
+
+// Save Information Every Minute
+ window.setInterval(() => {
+  for (i = 0; i < allTextAreas.length; i++) {
+    localStorage.setItem(allTextAreas[i].id, allTextAreas[i].value);
+  }
+  for (i = 0; i < allInputs.length; i++) {
+    if (allInputs[i].type === "checkbox") {
+      localStorage.setItem(allInputs[i].id, allInputs[i].checked);
+    }
+  }
+ }, 60000);
+
+// Manual Save
+  document.getElementById("manualSave").addEventListener("click", event => {
+   for (i = 0; i < allTextAreas.length; i++) {
+    localStorage.setItem(allTextAreas[i].id, allTextAreas[i].value);
+   }
+   for (i = 0; i < allInputs.length; i++) {
+    localStorage.setItem(allInputs[i].id, allInputs[i].checked);
+   }
+  });
+
+// Function To Limit Text Field
+ function limitText(inputField, numLimit) {
+    if (numLimit === -1) {
+      return;
+    }
+    if (inputField.value.length >= numLimit) {
+      inputField.value = inputField.value.substring(0, numLimit - 1);
+    }
+ }
+
+// Puts The limitText() Function On All Elements With The Tag "textarea"
+ for (i = 0; i < allTextAreas.length; i++) {
+    allTextAreas[i].addEventListener("keypress", event => {
+//      alert(event.target.maxLength);
+      limitText(event.target, event.target.maxLength);
+    });
+ }
+
+
+// d6 Function to randomly generate a number 1-6
+ function d6() {
+    return Math.floor(Math.random() * 6) + 1;
+ }
+
+/* Table Generators for Mundane Side */
+
+  // Mundane Name (First and Second)
+  document.getElementById("mundaneNameRoll").addEventListener("click", event => {     
+    let i = d6();
+    let j = d6();
+    document.getElementById("mundaneName").value = mundaneNameTable[i][j];
+    document.getElementById("mundaneLastName").value = mundaneLastNameTable[i][j]
+  });
+  // What Does Being A Girl Mean To You?
+  document.getElementById("meaningRoll").addEventListener("click", event => {
+    let i = d6();
+    let j = d6();
+    document.getElementById("meaning").value = meaningTable[i][j]
+  });
+  // What Are You Afraid Of?
+  document.getElementById("afraidRoll").addEventListener("click", event => {
+    let i = d6();
+    let j = d6();
+    document.getElementById("afraid").value = afraidTable[i][j]
+  });
+  // What Is Your Wish?
+  document.getElementById("wishRoll").addEventListener("click", event => {
+    let i = d6();
+    let j = d6();
+    document.getElementById("wish").value = wishTable[i][j]
+  });
+
+  // Reset Mundane Inputs
+  document.getElementById("mundaneReset").addEventListener("click", event => {
+    let mundaneTextBoxes = document.getElementsByClassName("mundaneSide");
+    for (i = 0; i < mundaneTextBoxes.length; i++) {
+      mundaneTextBoxes[i].value = "";
+    }
+  });
+
+/* Table Generators for Magical Side*/
+
+// Changes
+document.getElementById("changesRoll").addEventListener("click", event => {
+    let i = d6();
+    let j = d6();
+    document.getElementById("changes").value = changesTable[i][j]
+});
+// Magical Girl Color
+document.getElementById("colorRoll").addEventListener("click", event => {
+    let i = d6();
+    let j = d6();
+    document.getElementById("color").value = colorTable[i][j]
+});
+// Magical Theme
+document.getElementById("themeRoll").addEventListener("click", event => {
+    let i = d6();
+    let j = d6();
+    document.getElementById("theme").value = themeTable[i][j]
+});
+// Magical Names (First, Second, and Third)
+document.getElementById("magicalNameRoll").addEventListener("click", event => {
+    let i = d6();
+    let j = d6();
+    document.getElementById("magicalName").value = magicalNameTable[i][j]
+    document.getElementById("magicalSecondName").value = magicalSecondNameTable[i][j]
+    document.getElementById("magicalThirdName").value = magicalThirdNameTable[i][j]
+});
+
+// Reset Magical Inputs
+document.getElementById("magicalReset").addEventListener("click", event => {
+  let magicalTextBoxes = document.getElementsByClassName("magicalSide");
+  for (i = 0; i < magicalTextBoxes.length; i++) {
+    magicalTextBoxes[i].value = "";
+  }
+});
+
+/*Hope Shift Selection*/
+
+// Prompt to Select Hope Shift After All Three hopeMarks are Checked
+let hopeMarks = document.getElementsByClassName("hopeMarks");
+let hopeShifts = document.getElementsByClassName("hopeShifts");
+
+//Alert for whether a Great Hope or Hope Shift time occurs
+for (i = 0; i < hopeMarks.length; i++) {
+  hopeMarks[i].addEventListener("change", event => {
+    
+    let allHopeMarks = true; 
+    for (i = 0; i < hopeMarks.length; i++) {
+      allHopeMarks = allHopeMarks && hopeMarks[i].checked
+    }
+    
+    let allHopeShifts = true; 
+    for (i = 0; i < hopeShifts.length; i++) {
+      allHopeShifts = allHopeShifts && hopeShifts[i].checked
+    }
+
+    if (allHopeMarks && allHopeShifts) {
+      alert("A moment of Great Hope has presented itself!")
+      document.getElementById("greatHope").hidden = false;
+    } else if (allHopeMarks) {
+      alert("Time To Pick A Hope Shift!")
+    }
+  });
+}
+
+// Once a Hope Shift is selected, the hopeMarks clear
+for (i = 0; i < hopeShifts.length; i++) {
+  hopeShifts[i].addEventListener("change", event => {
+    for (j = 0; j < hopeMarks.length; j++) {
+      hopeMarks[j].checked = false;
+    }
+  });
+}
+
+//Select and Confirm Great Hope Option, Clear all hopeMarks and hopeShifts
+let greatHope = document.getElementsByClassName("greatHope");
+for (i = 0; i < greatHope.length; i++) {
+  greatHope[i].addEventListener("change", event => {
+    if(confirm("Are you sure this is the choice you wish to make?")) {
+      for (j = 0; j < hopeShifts.length; j++) {
+        hopeShifts[j].checked = false;
+        for (k = 0; k < hopeMarks.length; k++) {
+          hopeMarks[k].checked = false;
+        }
+      }
+    }
+  });
+}
+
+/*Magic Shift Selection*/
+
+//Prompt to Select Magic Shift After All Three magicMarks are Checked.
+let magicMarks = document.getElementsByClassName("magicMarks");
+let magicShifts = document.getElementsByClassName("magicShifts");
+let extremeShift = document.getElementById("extremeShift");
+
+//Alert for whether an Extreme Shift or Magic Shift time occurs
+for (i = 0; i < magicMarks.length; i++) {
+  magicMarks[i].addEventListener("change", event => {
+    
+    let allMagicMarks = true;
+    for (i = 0; i < magicMarks.length; i++) {
+      allMagicMarks = allMagicMarks && magicMarks[i].checked;
+    }
+    let allMagicShifts = true;
+    for (i = 0; i < magicShifts.length; i++) {
+      allMagicShifts = allMagicShifts && magicShifts[i].checked;
+    }
+
+    if (allMagicMarks && allMagicShifts) {
+      alert("An Extreme Shift has presented itself!")
+      extremeShift.hidden = false;
+    } else if (allMagicMarks) {
+      alert("Time To Pick A Magic Shift!")
+    }
+  });
+}
+// Once a Magic Shift is selected, the magicMarks clear
+for (i = 0; i < magicShifts.length; i++) {
+  magicShifts[i].addEventListener("change", event => {
+    for (j = 0; j < magicMarks.length; j++) {
+      magicMarks[j].checked = false;
+    }
+  })
+}
+
+/*Trauma Shift Selection*/
+
+//Prompt to Select Trauma Shift After All Three traumaMarks are Checked.
+let traumaMarks = document.getElementsByClassName("traumaMarks");
+let traumaShifts = document.getElementsByClassName("traumaShifts");
+
+for (i = 0; i < traumaMarks.length; i++) {
+  traumaMarks[i].addEventListener("change", event => {
+    let allTraumaMarks = true;
+    for (i = 0; i < traumaMarks.length; i++) {
+        allTraumaMarks = allTraumaMarks && traumaMarks[i].checked;
+    }
+    let allTraumaShifts = true;
+    for (i = 0; i < traumaShifts.length; i++) {
+        allTraumaShifts = allTraumaShifts && traumaShifts[i].checked;
+    }
+    if (allTraumaMarks && allTraumaShifts) {
+      alert("An Extreme Shift has presented itself!")
+      extremeShift.hidden = false;
+    } else if (allTraumaMarks) {
+      alert("Time To Pick A Trauma Shift!")
+    }
+  });
+}
+
+// Once a Trauma Shift is selected, the traumaMarks clear
+for (i = 0; i < traumaShifts.length; i++) {
+  traumaShifts[i].addEventListener("change", event => {
+    for (j = 0; j < traumaMarks.length; j++) {
+      traumaMarks[j].checked = false;
+    }
+  })
+}
+
+//Select and Confirm Extreme Shift Option, Clear all magicMarks, traumaMarks, magicShifts, and traumaShifts
+let allExtremeShifts = document.getElementsByClassName("extremeShift");
+for (i = 0; i < allExtremeShifts.length; i++) {
+  allExtremeShifts[i].addEventListener("change", event => {
+    if(confirm("Are you sure this is the choice you wish to make?")) {
+      for (j = 0; j < magicShifts.length; j++) {
+        magicShifts[j].checked = false;
+        traumaShifts[j].checked = false;
+        for (k = 0; k < magicMarks.length; k++) {
+          magicMarks[k].checked = false;
+          traumaMarks[k].checked = false;
+        }
+      }
+    }
+  });
+}
+
+</script>
+
+</html>
