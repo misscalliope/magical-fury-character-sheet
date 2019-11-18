@@ -1,0 +1,52 @@
+h2, h3, h4, h5, h6 {
+    text-align:center;
+}
+
+.card {
+    text-align: center;
+}
+
+body {
+    margin-bottom: 100px;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.button {
+    float: right;
+}
+
+.mundane-card {
+    position: relative;
+    height: auto;
+}
+
+.buttons {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-inputs {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 80%;
+}
+
+.info-inputs2 {
+    width: 50%;
+}
+
+.notes {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    width: 80%;
+}
+
+.hopeMarks, .magicMarks, .traumaMarks {
+    width:20px;
+    height: 20px;
+}
